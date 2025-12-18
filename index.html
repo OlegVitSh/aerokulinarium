@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍳 АэроКулинариум</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <h1>🍳 АэроКулинариум</h1>
+            </div>
+            <p class="subtitle">Видеорецепты для вашего аэрогриля</p>
+        </header>
+
+        <!-- Категории блюд -->
+        <section class="section">
+            <h2><i class="fas fa-clock"></i> Выберите время приема пищи</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="breakfast">
+                    <div class="category-icon breakfast">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <h3>Завтрак</h3>
+                    <p>25 рецептов</p>
+                </div>
+                
+                <div class="category-card" data-category="dinner">
+                    <div class="category-icon dinner">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Ужин</h3>
+                    <p>32 рецепта</p>
+                </div>
+                
+                <div class="category-card" data-category="snack">
+                    <div class="category-icon snack">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <h3>Закуска</h3>
+                    <p>18 рецептов</p>
+                </div>
+                
+                <div class="category-card" data-category="baking">
+                    <div class="category-icon baking">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3>Выпечка</h3>
+                    <p>41 рецепт</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ингредиенты -->
+        <section class="section">
+            <h2><i class="fas fa-carrot"></i> Выберите основной ингредиент</h2>
+            <div class="ingredients-grid">
+                <div class="ingredient-card" data-ingredient="chicken">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-drumstick-bite"></i>
+                    </div>
+                    <span>Курица</span>
+                </div>
+                
+                <div class="ingredient-card" data-ingredient="eggs">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-egg"></i>
+                    </div>
+                    <span>Яйца</span>
+                </div>
+                
+                <div class="ingredient-card" data-ingredient="pork">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-bacon"></i>
+                    </div>
+                    <span>Свинина</span>
+                </div>
+                
+                <div class="ingredient-card" data-ingredient="fish">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <span>Рыба</span>
+                </div>
+                
+                <div class="ingredient-card" data-ingredient="vegetables">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span>Овощи</span>
+                </div>
+                
+                <div class="ingredient-card" data-ingredient="beef">
+                    <div class="ingredient-icon">
+                        <i class="fas fa-hamburger"></i>
+                    </div>
+                    <span>Говядина</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок избранного -->
+        <section class="section">
+            <h2><i class="fas fa-fire"></i> Популярные рецепты</h2>
+            <div class="featured-recipes" id="featured-recipes">
+                <!-- Динамически загружаются -->
+            </div>
+        </section>
+
+        <!-- Кнопка поиска -->
+        <div class="search-btn" id="searchBtn">
+            <i class="fas fa-search"></i> Поиск рецептов
+        </div>
+    </div>
+
+    <!-- Модальное окно с рецептами -->
+    <div class="modal-overlay" id="recipesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Рецепты</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="recipes-list" id="recipesList">
+                <!-- Рецепты загружаются сюда -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Поиск -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-content">
+            <div class="search-header">
+                <input type="text" id="searchInput" placeholder="Например: куриные крылышки...">
+                <button id="closeSearch">&times;</button>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <script src="recipes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
