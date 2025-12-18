@@ -1,6 +1,6 @@
 const { Telegraf } = require('telegraf');
 
-const bot = new Telegraf('YOUR_BOT_TOKEN');
+const bot = new Telegraf('7036781213:AAH_5TNSJJXTYiEH9DtLXt5bT4_KHPjclOA');
 
 // Команда /start
 bot.command('start', (ctx) => {
@@ -9,7 +9,7 @@ bot.command('start', (ctx) => {
             inline_keyboard: [[
                 {
                     text: "📱 Открыть приложение",
-                    web_app: { url: "https://ваш-сайт.com" }
+                    web_app: { url: "https://github.com/OlegVitSh/aerokulinarium" }
                 }
             ]]
         }
@@ -26,7 +26,7 @@ bot.on('message', (ctx) => {
                 caption: `🎬 ${data.recipe_title}\n\nПриятного аппетита! 🍽️`,
                 reply_markup: {
                     inline_keyboard: [[
-                        { text: "📖 Все рецепты", web_app: { url: "https://ваш-сайт.com" } }
+                        { text: "📖 Все рецепты", web_app: { url: "https://github.com/OlegVitSh/aerokulinarium" } }
                     ]]
                 }
             });
